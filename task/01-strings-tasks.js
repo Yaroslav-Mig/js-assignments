@@ -1,5 +1,4 @@
 'use strict';
-
 /********************************************************************************************
  *                                                                                          *
  * Plese read the following tutorial before implementing tasks:                             *
@@ -18,7 +17,7 @@
  *
  * @example
  *   'aa', 'bb' => 'aabb'
- *   'aa',''    => 'aa'
+ *   'aa',''    => 'aa'clear
  *   '',  'bb'  => 'bb'
  */
 function concatenateStrings(value1, value2) {
@@ -39,7 +38,8 @@ function concatenateStrings(value1, value2) {
  *   ''      => 0
  */
 function getStringLength(value) {
-  throw new Error('Not implemented');
+  const strLength = value.length;
+  return strLength;
 }
 
 /**
@@ -56,7 +56,7 @@ function getStringLength(value) {
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
 function getStringFromTemplate(firstName, lastName) {
-  throw new Error('Not implemented');
+  return `Hello, ${firstName} ${lastName}!`;
 }
 
 /**
@@ -70,7 +70,7 @@ function getStringFromTemplate(firstName, lastName) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(value) {
-  throw new Error('Not implemented');
+  return value.split('Hello, ').join('').split('!').join('');
 }
 
 
