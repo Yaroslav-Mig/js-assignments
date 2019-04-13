@@ -202,7 +202,9 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-  throw new Error('Not implemented');
+  return String.fromCharCode(9484) + String.fromCharCode(9472).repeat(width - 2) + String.fromCharCode(9488) + "\n" +
+    (String.fromCharCode(9474) + " ".repeat(width - 2) + String.fromCharCode(9474) + "\n").repeat(height - 2) +
+    String.fromCharCode(9492) + String.fromCharCode(9472).repeat(width - 2) + String.fromCharCode(9496) + "\n";
 }
 
 
