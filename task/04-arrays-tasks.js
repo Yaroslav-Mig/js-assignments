@@ -208,7 +208,7 @@ function getTail(arr, n) {
  *    +'30,31,32,33,34'
  */
 function toCsvText(arr) {
-  return arr.map(v => v.map(i => `${i}`).join(',')).join('\n');
+  return arr.map(v => v.join()).join('\n');
 }
 
 /**
@@ -223,7 +223,7 @@ function toCsvText(arr) {
  *   [ 10, 100, -1 ]      => [ 100, 10000, 1 ]
  */
 function toArrayOfSquares(arr) {
-  throw new Error('Not implemented');
+  return arr.map(v => v * v);
 }
 
 
