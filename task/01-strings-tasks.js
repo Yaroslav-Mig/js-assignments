@@ -222,7 +222,13 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-  throw new Error('Not implemented');
+  const arr = str.split('').map(function (value) {
+    if (value >= "A" && value <= 'z') {
+      value = value.charCodeAt() + (value.toLowerCase() <= 'm' ? 13 : -13);
+      return String.fromCharCode(value);
+    } else return value;
+  });
+  return arr.join('');
 }
 
 /**
