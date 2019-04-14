@@ -391,7 +391,10 @@ function getFalsyValuesCount(arr) {
  *    [ true, 0, 1, 'true' ], true => 1
  */
 function findAllOccurences(arr, item) {
-  throw new Error('Not implemented');
+  return arr.reduce((acc, val) => {
+    val === item ? acc++ : acc;
+    return acc;
+  }, 0);
 }
 
 /**
@@ -406,7 +409,7 @@ function findAllOccurences(arr, item) {
  *    ['rock', 'paper', 'scissors']     => 'rock,paper,scissors'
  */
 function toStringList(arr) {
-  throw new Error('Not implemented');
+  return arr.join();
 }
 
 
@@ -435,7 +438,13 @@ function toStringList(arr) {
  *      { country: 'Russia',  city: 'Saint Petersburg' }
  */
 function sortCitiesArray(arr) {
-  throw new Error('Not implemented');
+  return arr.sort((a, b) => {
+    if (a.country !== b.country) {
+      return a.country < b.country ? -1 : 1;
+    } else {
+      return a.city < b.city ? -1 : 1;
+    }
+  });
 }
 
 /**
@@ -457,7 +466,12 @@ function sortCitiesArray(arr) {
  *           [0,0,0,0,1]]   
  */
 function getIdentityMatrix(n) {
-  throw new Error('Not implemented');
+  const arr = new Array(n).fill([]);
+  return arr.map((val, ind) => {
+    val = new Array(n).fill(0);
+    val[ind] = 1;
+    return val;
+  });
 }
 
 /**
@@ -474,7 +488,8 @@ function getIdentityMatrix(n) {
  *     3, 3   => [ 3 ]
  */
 function getIntervalArray(start, end) {
-  throw new Error('Not implemented');
+  const len = end - start + 1;
+  return new Array(len).fill().map((v, i) => v = start + i);
 }
 
 /**
@@ -489,7 +504,10 @@ function getIntervalArray(start, end) {
  *   [ 1, 1, 2, 2, 3, 3, 4, 4] => [ 1, 2, 3, 4]
  */
 function distinct(arr) {
-  throw new Error('Not implemented');
+  return arr.reduce((acc, val) => {
+    (acc.indexOf(val) < 0) ? acc.push(val) : acc;
+    return acc;
+  }, [])
 }
 
 /**
