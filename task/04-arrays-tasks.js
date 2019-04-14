@@ -247,7 +247,7 @@ function getMovingSum(arr) {
       item += sum[index - 1];
       sum.push(item);
     } else {
-      sum.push(item)
+      sum.push(item);
     }
     return sum;
   }, []);
@@ -265,7 +265,7 @@ function getMovingSum(arr) {
  * [ "a" ] => []
  */
 function getSecondItems(arr) {
-  throw new Error('Not implemented');
+  return arr.filter((v, i) => i % 2);
 }
 
 
@@ -284,7 +284,10 @@ function getSecondItems(arr) {
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
 function propagateItemsByPositionIndex(arr) {
-  throw new Error('Not implemented');
+  return arr.reduce((acc, val, ind) => {
+    const tempArr = new Array(ind + 1).fill(val);
+    return acc.concat(tempArr);
+  }, []);
 }
 
 
@@ -302,7 +305,7 @@ function propagateItemsByPositionIndex(arr) {
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
 function get3TopItems(arr) {
-  throw new Error('Not implemented');
+  return arr.sort((a, b) => b - a).slice(0, 3);
 }
 
 
