@@ -414,7 +414,7 @@ function toStringList(arr) {
 
 
 /**
- * Sorts the specified array by country name first and city name (if countries are equal) in ascending order.
+ * Sorts the specified array by country name first and city name (if countries are equal) in asctailing order.
  * 
  * @param {array} arr
  * @return {array}
@@ -475,10 +475,10 @@ function getIdentityMatrix(n) {
 }
 
 /**
- * Creates an array of integers from the specified start to end (inclusive)
+ * Creates an array of integers from the specified head to tail (inclusive)
  * 
- * @param {number} start
- * @param {number} end
+ * @param {number} head
+ * @param {number} tail
  * @return {array}
  * 
  * @example
@@ -487,9 +487,9 @@ function getIdentityMatrix(n) {
  *     0, 100 => [ 0, 1, 2, ..., 100 ]
  *     3, 3   => [ 3 ]
  */
-function getIntervalArray(start, end) {
-  const len = end - start + 1;
-  return new Array(len).fill().map((v, i) => v = start + i);
+function getIntervalArray(head, tail) {
+  const len = tail - head + 1;
+  return new Array(len).fill().map((v, i) => v = head + i);
 }
 
 /**
@@ -580,7 +580,7 @@ function getElementByIndexes(arr, indexes) {
 
 /**
  * Swaps the head and tail of the specified array:
- * the head (first half) of array move to the end, the tail (last half) move to the start. 
+ * the head (first half) of array move to the tail, the tail (last half) move to the head. 
  * The middle element (if exists) leave on the same position.
  * 
  *  
@@ -597,7 +597,16 @@ function getElementByIndexes(arr, indexes) {
  * 
  */
 function swapHeadAndTail(arr) {
-  throw new Error('Not implemented');
+  const len = Math.floor(arr.length / 2);
+  if (!(arr.length % 2)) {
+    let head = arr.splice(0, len);
+    return arr.concat(head)
+  }
+  else {
+    let head = arr.splice(0, len);
+    let tail = arr.splice(1, len)
+    return tail.concat(arr, head)
+  };
 }
 
 
